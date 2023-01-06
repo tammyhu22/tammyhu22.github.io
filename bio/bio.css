@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Marcellus|DM+Sans');
 .picture {
   width: 300px;
   border-radius: 10px;
@@ -14,7 +15,7 @@
 }
 
 body {
-  background-color: black;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(22, 22, 22);
+  font-family: DM Sans, sans-serif;
   color: white;
 }
