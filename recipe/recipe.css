@@ -3,12 +3,22 @@ html,
 
 body {
   font-family: DM Sans, sans-serif;
-  background-color: rgb(22, 22, 22);
+  background-color: rgb#121212;
   color: white;
+  opacity: 90%;
 }
 
 .recipe-container {
   width: 80%;
   margin: auto;
   margin-top: 5rem;
+}
+
+pre code {
+  background-color: #282A36;
+  border: 0.5px solid #8BE9FD;
+  display: block;
+  padding: 20px;
+  border-radius: 5px;
+  color: #F6B26A;
 }

@@ -9,12 +9,13 @@
 .navbar{
     position: fixed;
     width: 100%;
-    background: rgb(22, 22, 22);
+    background: rgb#121212;
     font-family: 'IBM Plex Mono', monospace;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    z-index: 1;
 }
 .navbar .max-width{
     display: flex;
@@ -25,6 +26,7 @@
     color: #fff;
     font-size: 35px;
     font-weight: 600;
+    opacity: 90%;
 }
 .navbar .menu li{
     list-style: none;
@@ -33,6 +35,7 @@
 .navbar .menu li a{
     color: #fff;
     float: right;
+    opacity: 90%
 }
 
 .navbar li {
@@ -63,11 +66,16 @@
   gap: 12px;
 }
 
+.picture-container p {
+  color: white;
+}
+
 body {
   background-color: rgb(22, 22, 22);
   font-family: DM Sans, IBM Plex Mono, sans-serif;
   color: white;
-  font-size:larger
+  font-size:larger;
+  opacity: 90%;
 }
 
 .page-container {
@@ -75,6 +83,7 @@ body {
   margin-top: 5rem;
   margin: auto;
 }
+
 
 .label {
   font-size: smaller;

@@ -3,29 +3,102 @@
     <link rel="stylesheet" href="./bio.css" />
   </head>
   <body>
-    <div class="bio-container">
+    <div class="fill">
       <img
-        class="picture"
-        src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Goblin_illustration_from_19th_century.jpg"
+        src="https://lh3.googleusercontent.com/cBVBHD2_objz5K0REBxSiNLSRWcQsXGAjmLsmiUzHq9sJPcQbAm96KXiT6uyp7fOstQ7Xv_FMpfVsl1JbJG7XuF7cmV4U4FUCV3mLl4Jf7UetZYcKvW5IxmuGo-TlyxPDVI7n4Detw=w2400"
       />
-      <div>
-        <h2>Rumplestiltskin</h2>
-        <p class="intro-paragraph">
-          <b>I like to creep around my home and act like a goblin.</b>
-          I don't know why but I just enjoy doing this. Maybe it's my way of
-          dealing with stress or something but I just do it about once every
-          week. Generally I'll carry around a sack and creep around in a sort of
-          crouch-walking position making goblin noises, then I'll walk around my
-          house and pick up various different “trinkets” and put them in my bag
-          while saying stuff like “I'll be having that” and laughing maniacally
-          in my goblin voice (“trinkets” can include anything from stuff I find
-          on the ground to cutlery or other utensils). The other day I was
-          talking with my neighbours and they mentioned hearing weird noises
-          like what I wrote about and I was just internally screaming the entire
-          conversation. I'm 99% sure they don't know it's me but god that 1%
-          chance is seriously weighing on my mind.
-        </p>
-      </div>
+    </div>
+    <div class="title">
+      <h1>The making of the portfolio you are currently looking at. ツ</h1>
+    </div>
+    <div class = "bio-container">
+      <h2 class = "space">OVERVIEW</h2>
+      <p class="intro-paragraph">
+        I first approached my portfolio by constructing an idea of what it would look like in my head. I knew
+        I wanted to stick to the dark mode theme since it was something new I hadn't tried. The overall steps
+        I took were:
+        <div class = list>
+        <li>Creating a navigation bar with a "work" and "about" section, including my name in the top left corner</li>
+        <li>Working on the landing page: editing the description to fit my personality</li>
+        <ul><li>Creating a css hover interaction on the highlighted words that displayed images on hover</li></ul>
+        <li>Putting in a bio under "about"</li>
+        <li>Rearranging the front page to have a "projects" section, on top of an "extras" section</li>
+        <ul><li>Including a cheatsheets page of helpful code under "extras"</li></ul>
+        <ul><li>Adding titles under the picture containers</li></ul>
+        <li>Changing all default fonts to custom fonts of IBM Plex Mono and DM Sans</li>
+        <li>Putting in content on each page, and making sure everything was aligned correctly/organized legibly</li>
+        <li>(A mid-process photo shown below)</li>
+        <br />
+          <div class = "picture-container">
+            <img
+            class = "picture"
+            src = "https://lh3.googleusercontent.com/CJ6KXctRdx722jlGGb9gUk021kuBIxYoICmHAI-CrtLJPBKy19C_pXtjPUQnjkgwGs3YUHgkPhPQ7KU0o-X2imjEPoHnm1DVzXSFNEfuEOzGh5qNUPFx04qi8YeF9pCg7tLx0ZmKcg=w2400"
+            />
+          </div>
+        </div>
+      </p>
+      <br />
+      <h2 class = "space">ISSUE(S)</h2>
+      <p class="intro-paragraph">
+        I ran into a lot of issues in this process, including making this page - I struggled with figuring out how
+        to indent lists, change line height of a list so it didn't look weird, adjusting the width of the text box,
+        and adding an image that was scaled down but was aligned with the text. 
+        <br />
+        <br />
+        One of the more notable issues I ran
+        into was creating the navigation bar. I didn't know where to start, so I went on the internet looking for code
+        I could utilize. But even when I copied in the code, my navigation bar didn't look right - the words were all 
+        the wrong color and spacing. I did some research and figured out that the words on my nav bar were part of a list,
+        in which I could adjust the margins. 
+        <br />
+        <br />
+        Editing the colors and fonts, I realized, were also done in a separate
+        css element. On hover, the images would also overlap on top of the nav bar, a pretty big aesthetic issue. 
+        I resolved this by adding z-index = 0 as a property of the nav bar.
+      </p>
+      <br />
+
+      <h2 class = "space">CSS transition</h2>
+      <p class="intro-paragraph">
+        The CSS transition I implemented was on my landing page: a hover effect on the highlighted words of
+        my short intro. Essentially, I aimed to have a transition where if the cursor hovered over the words
+        "sushi", "staring at cats", and "Single's Inferno", it would display a relevant image behind the words.
+        I chose this CSS transition because I wanted to create a fun visual interaction as the first thing a 
+        visitor on the site can play around with. I felt that it could show more personality than a plain description
+        of myself. 
+        <br />
+        <br />
+        How I made it work:
+        <div class = list>
+          <li>Selected a color palette for the words I wanted to have a hover effect
+            and added this individually to the html
+          </li>
+          <li>Created a new div class titled "hover-title", with the words
+            nested inside. Created another div class called "hover-image" with the img link
+          </li>
+          <li>
+            In the css file, I had the default hover-image to be hidden (visibility:hidden), so that when not hovered,
+            the user can't see the image yet. I set a condition that when the hover-title is hovered,
+            the hover-image because visible (visibility:visible)
+          </li>
+          <li>
+            Under the properties of hover-image, I adjusted the position to be fixed, slightly
+            offset from the hovered text, and appearing below the text. I had to consult the internet
+            here for some help on specific syntax I should be using
+          </li>
+          <li>
+            Scaled down the images to be consistent across the board
+          </li>
+          <br />
+          <div class = "gif-container">
+            <img
+            class = "gif"
+            src = "https://media.giphy.com/media/317KaNiw0seMPk9tPL/giphy.gif"
+            />
+          </div>
+        </div>
+      </p>
+
     </div>
   </body>
 </html>
