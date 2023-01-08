@@ -33,7 +33,7 @@
 }
 
 body {
-  background-color: #121212;
+  background-color: rgb(22, 22, 22);
   font-family: DM Sans, sans-serif;
   color: white;
   opacity: 90%;
@@ -45,7 +45,7 @@ body {
 }
 
 .list {
-  font-size: 20;
+  font-size: 22;
   opacity: 70%;
 }
 

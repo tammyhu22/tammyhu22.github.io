@@ -6,6 +6,7 @@ body {
   background-color: rgb#121212;
   color: white;
   opacity: 90%;
+  height: 100%;
 }
 
 .recipe-container {
@@ -22,3 +23,19 @@ pre code {
   border-radius: 5px;
   color: #F6B26A;
 }
+
+.space {
+  font-family: IBM Plex Mono, monospace;
+  opacity: 70%;
+}
+
+.coffee {
+  width: 30px;
+  height: auto;
+  object-fit: contain;
+  aspect-ratio: 1;
+  padding-left: 0px;
+  padding-bottom: 20px;
+  padding-top: 50px;
+}
+

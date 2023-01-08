@@ -1,8 +1,21 @@
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bio.css" />
+    <link rel="stylesheet" href="../index.css" />
   </head>
   <body>
+    <nav class="navbar" style = "background-color: rgb(22, 22, 22);">
+      <div class="max-width">
+          <div class="logo"><a href='../index.html'>TAMMY<span>ꕤHU</span></a></div>
+          <ul class="menu">
+              <li><a href="../index.html">Work</a></li>
+              <li><a href="../about.html">About</a></li>
+          </ul>
+      </div>
+    </nav>
+    <br></br>
     <div class="fill">
       <img
         src="https://lh3.googleusercontent.com/cBVBHD2_objz5K0REBxSiNLSRWcQsXGAjmLsmiUzHq9sJPcQbAm96KXiT6uyp7fOstQ7Xv_FMpfVsl1JbJG7XuF7cmV4U4FUCV3mLl4Jf7UetZYcKvW5IxmuGo-TlyxPDVI7n4Detw=w2400"
@@ -45,16 +58,17 @@
         and adding an image that was scaled down but was aligned with the text. 
         <br />
         <br />
-        One of the more notable issues I ran
-        into was creating the navigation bar. I didn't know where to start, so I went on the internet looking for code
-        I could utilize. But even when I copied in the code, my navigation bar didn't look right - the words were all 
-        the wrong color and spacing. I did some research and figured out that the words on my nav bar were part of a list,
-        in which I could adjust the margins. 
-        <br />
-        <br />
-        Editing the colors and fonts, I realized, were also done in a separate
-        css element. On hover, the images would also overlap on top of the nav bar, a pretty big aesthetic issue. 
-        I resolved this by adding z-index = 0 as a property of the nav bar.
+        <div class = "list">
+          <p>One of the more notable issues I ran
+          into was creating the navigation bar. I didn't know where to start, so I went on the internet looking for code
+          I could utilize. But even when I copied in the code, my navigation bar didn't look right - the words were all 
+          the wrong color and spacing. I did some research and figured out that the words on my nav bar were part of a list,
+          in which I could adjust the margins. </p>
+          <p>Editing the colors and fonts, I realized, were also done in a separate
+          css element. On hover, the images would also overlap on top of the nav bar, a pretty big aesthetic issue. 
+          I resolved this by adding z-index = 0 as a property of the nav bar.</p>
+        </div>
+
       </p>
       <br />
 
@@ -63,12 +77,11 @@
         The CSS transition I implemented was on my landing page: a hover effect on the highlighted words of
         my short intro. Essentially, I aimed to have a transition where if the cursor hovered over the words
         "sushi", "staring at cats", and "Single's Inferno", it would display a relevant image behind the words.
-        I chose this CSS transition because I wanted to create a fun visual interaction as the first thing a 
+        <div class = list>I chose this CSS transition because I wanted to create a fun visual interaction as the first thing a 
         visitor on the site can play around with. I felt that it could show more personality than a plain description
-        of myself. 
+        of myself. </div>
         <br />
-        <br />
-        How I made it work:
+        <p class = "intro-paragraph">How I made it work:</p>
         <div class = list>
           <li>Selected a color palette for the words I wanted to have a hover effect
             and added this individually to the html
@@ -98,7 +111,19 @@
           </div>
         </div>
       </p>
-
+      <br />
+      <h2 class = "space">IDEAS & FUTURE</h2>
+      <p class="intro-paragraph">
+        These are some additional ideas for the site in the future:
+        <br />
+        <div class = "list">
+          <li>Creating a hover interaction for project images</li>
+          <li>Adding pill bottle tags for the projects as short phrase descriptions</li>
+          <li>Adding a CSS transition for my top left logo, or some kind of animation</li>
+          <li>Customizing my about page further</li>
+        </div>
+      </p>
+      <br />
     </div>
   </body>
 </html>
