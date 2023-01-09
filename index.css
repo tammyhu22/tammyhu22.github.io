@@ -57,6 +57,7 @@
 
 .picture:hover {
   filter: brightness(80%);
+  rotate: z 4deg;
 }
 
 .picture-container {
