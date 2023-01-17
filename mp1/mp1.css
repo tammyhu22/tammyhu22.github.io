@@ -2,9 +2,18 @@
 
 .fill {
   overflow: hidden;
-  background-size: cover;
+  background-size: contain;
+  max-height: 80%;
+  width: auto;
   background-position: center;
-  background-image: url('https://lh3.googleusercontent.com/cBVBHD2_objz5K0REBxSiNLSRWcQsXGAjmLsmiUzHq9sJPcQbAm96KXiT6uyp7fOstQ7Xv_FMpfVsl1JbJG7XuF7cmV4U4FUCV3mLl4Jf7UetZYcKvW5IxmuGo-TlyxPDVI7n4Detw=w2400');
+  background-image: url('https://lh3.googleusercontent.com/fLrvdEQVWp7_c0gE-W-FIm0lWAbZz5emGPlc-NxY_pVHDIwCzJbUDrHPeAW_OLHHSQyBhhJwYBrbYEGqDnu1OlDCM5wa-F02c--K-KHOqsY8LMm7cwYDTcbZUdnAJbZExG-7BtT24A=w2400');
+}
+
+.image {
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+    margin-left: 200px;
 }
 
 .title {
@@ -80,5 +89,5 @@ body {
 }
 
 ul {
-  margin-left: 5%;
+    margin-left: 5%;
 }
