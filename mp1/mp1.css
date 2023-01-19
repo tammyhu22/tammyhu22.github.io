@@ -93,3 +93,11 @@ body {
 ul {
     margin-left: 5%;
 }
+
+.link {
+  color:#00e9d8;
+}
+
+.link:hover {
+  color:#f3f520;
+}
