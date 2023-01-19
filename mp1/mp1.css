@@ -53,8 +53,8 @@ body {
 }
 
 .picture2 {
-  width: 720px;
-  height: 400px;
+  width: 100 px;
+  height: auto;
   border: 1px solid rgb(95, 95, 95);
   border-radius: 5px;
   cursor: pointer;
@@ -80,6 +80,8 @@ body {
 
 .picture-container2 {
   display: in-line;
+  width: 100 px;
+  height: auto;
 }
 
 .space {

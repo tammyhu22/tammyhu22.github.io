@@ -28,34 +28,61 @@
     <div class = "bio-container">
       <h2 class = "space">OVERVIEW</h2>
       <p class="intro-paragraph">
-        I first approached my portfolio by constructing an idea of what it would look like in my head. I knew
-        I wanted to stick to the dark mode theme since it was something new I hadn't tried. The overall steps
-        I took were:
+        In this project, I created a Chrome extension called the "Cookie Counter". This extension functions to 
+        increase awareness of a website's cookies - through replacing the images on a website with an image of
+        a cookie (based on how many cookies there are). The extension also has an option to delete the cookies 
+        on the current page. 
         <br />
         <br />
-        <div class = list>
-          <li>Creating a navigation bar with a "work" and "about" section, including my name in the top left corner</li>
-          <li>Working on the landing page: editing the description to fit my personality</li>
-          <ul><li>Creating a css hover interaction on the highlighted words that displayed images on hover</li></ul>
-          <li>Putting in a bio under "about"</li>
-          <li>Rearranging the front page to have a "projects" section, on top of an "extras" section</li>
-          <ul><li>Including a cheatsheets page of helpful code under "extras"</li></ul>
-          <ul><li>Adding titles under the picture containers</li></ul>
-          <li>Changing all default fonts to custom fonts of IBM Plex Mono and DM Sans</li>
-          <li>Putting in content on each page, and making sure everything was aligned correctly/organized legibly</li>
-          <li>(A mid-process photo shown below)</li>
-          <br />
-            <div class = "picture-container2">
-              <img
-              class = "picture2"
-              src = "https://lh3.googleusercontent.com/CJ6KXctRdx722jlGGb9gUk021kuBIxYoICmHAI-CrtLJPBKy19C_pXtjPUQnjkgwGs3YUHgkPhPQ7KU0o-X2imjEPoHnm1DVzXSFNEfuEOzGh5qNUPFx04qi8YeF9pCg7tLx0ZmKcg=w2400"
-              width = "720px" height = "400px"
-              />
-            </div>
-        </div>
       </p>
       <br />
       <br />
+      <h2 class = "space">DEVELOPMENT PROCESS</h2>
+      <p class = "intro-paragraph">
+        These are the main steps I took in approaching this project.
+      </p>
+      <br />
+      <div class = list>
+        <li>Cloning examples from the instructor and reading/analyzing them to learn how javascript worked</li>
+        <li>Found Google's cookie API, and narrowed down my project direction by using Google's cookie extension example as a starting point</li>
+        <ul><li>Looking up readings for javascript, and how to connect html to it (did a lot of this throughout)</li></ul>
+        <li>Laying out my files and customizing the CSS</li>
+        <li>Created a line on my extension to display the current number of cookies</li>
+        <ul><li>Having that number update once a user chooses to delete cookies</li></ul>
+        <li>Created a "enable cookie" checkbox</li>
+        <li>Connecting javascript to content script</li>
+        <ul><li>Sending the number of cookies to content script once the checkbox is checked</li></ul>
+        <li>(A mid-process photo shown below)</li>
+        <br />
+          <div class = "picture-container2">
+            <img
+            class = "picture2"
+            src = "https://lh3.googleusercontent.com/9lSyq--CmP-gqBQRgT3jMcsB7wtJ7Udfnzp4bo7pCNxOSLm3L8Yk-farbQeldYLg15FE1IvpL8zH8TbRckpa91mtRue37SI-DxNe4JZIWqqDRoBYmVMKyD7iy3UD8V1k8L1u0mMRng=w2400"
+            width = "393px" height = "488px"
+            />
+          </div>
+      </div>
+      <br />
+      <br />
+      <h2 class = "space">ISSUE DEEP DIVE</h2>
+      <p class = "intro-paragraph">
+        I ran into several issues in this project. One of the most notable issues was displaying a line of text
+        that updated the number of current cookies on a site. It was a logic issue where at first, I was unable to get the
+        cookie number variable to be connected with my html's inline container.
+      </p>
+      <br />
+      <br />
+      <div class = "list">
+        <p>I approached this problem with several steps, including:</p>
+        <li>Using console.log() to report back to see where in my code was coming up null</li>
+        <li>Started by referencing the deleteCookies function that was originally in the template code</li>
+        <ul><li>Created a getCookies() function to grab the cookies.length once the domain's cookies were gathered</li></ul>
+        <ul><li>This function connected to another function of setCookie() which communicated that number back to the html inline container</li></ul>
+        <li>My code was not working at this point, so I tried adding an EventListener that called a function when the DOM was fully loaded and parsed</li>
+        <ul><li>This function would be able to grab the url and pass it in the earlier function I had made getCookies()</li></ul>
+        <li>Lastly, I needed the extension to update this number whenever a user deleted the site's cookies</li>
+        <ul><li>After failing to write a new function to do this, I instead went into the deleteCookies() function to set my cookies back to 0 once cookies were deleted</li></ul>
+      </div>
     </div>
   </body>
 </html>
