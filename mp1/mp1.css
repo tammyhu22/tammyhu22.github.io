@@ -96,6 +96,7 @@ ul {
 
 .link {
   color:#00e9d8;
+  text-decoration: underline;
 }
 
 .link:hover {
