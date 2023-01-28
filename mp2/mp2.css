@@ -1,0 +1,139 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 15px;
+}
+.sketch {
+    aspect-ratio: 1;
+    height: 100%;
+}
+
+.one {
+    background-color: red;
+}
+
+.two {
+    background-color: blue;
+}
+
+.three {
+    background-color: green;
+}
+
+.four {
+    background-color: purple;
+}
+
+.five {
+    background-color: orange;
+}
+
+.six {
+    background-color: yellow;
+}
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Marcellus|DM+Sans');
+
+.fill {
+  overflow: hidden;
+  background-size: contain;
+  max-height: 80%;
+  width: auto;
+  background-position: center;
+  background-image: url('https://lh3.googleusercontent.com/fLrvdEQVWp7_c0gE-W-FIm0lWAbZz5emGPlc-NxY_pVHDIwCzJbUDrHPeAW_OLHHSQyBhhJwYBrbYEGqDnu1OlDCM5wa-F02c--K-KHOqsY8LMm7cwYDTcbZUdnAJbZExG-7BtT24A=w2400');
+}
+
+
+.image {
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+    margin-left: 200px;
+}
+
+.title {
+  width: 80%;
+  margin: auto;
+  margin-left: 100px;
+  margin-top: 2rem;
+  font-size: 30;
+  line-height: 80px;
+}
+
+.bio-container {
+  display: in-line;
+  width: 70%;
+  margin: auto;
+  margin-right: 300px;
+  margin-left: 100px;
+  margin-top: 5rem;
+  gap: 12px;
+}
+
+body {
+  background-color: rgb(22, 22, 22);
+  font-family: DM Sans, sans-serif;
+  color: white;
+  opacity: 90%;
+  line-height: 40px;
+}
+
+.intro-paragraph {
+  font-size: 30;
+}
+
+.list {
+  font-size: 22;
+  opacity: 70%;
+}
+
+.picture2 {
+  width: 100 px;
+  height: auto;
+  border: 1px solid rgb(95, 95, 95);
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: fill;
+  aspect-ratio: 1;
+  opacity: 100%;
+}
+
+.gif {
+  width: 700px;
+  height: 400px;
+  border: 1px solid rgb(95, 95, 95);
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: fill;
+  aspect-ratio: 1;
+  opacity: 100%;
+}
+
+.gif-container {
+  display: in-line;
+}
+
+.picture-container2 {
+  display: in-line;
+  width: 100 px;
+  height: auto;
+}
+
+.space {
+  font-family: IBM Plex Mono, monospace;
+  opacity: 100%;
+  color: #E8FFB7
+}
+
+ul {
+    margin-left: 5%;
+}
+
+.link {
+  color:#00e9d8;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color:#f3f520;
+}
