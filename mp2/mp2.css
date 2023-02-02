@@ -1,36 +1,44 @@
-.parent {
+#gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 15px;
-}
-.sketch {
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+  
+  [data-content]:before {
+    content: attr(data-content);
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    text-decoration: none;
+    color: rgb(22, 22, 22);
+    font-weight: 600;
+    padding: 0.4rem 0.7rem 0.3rem 0.7rem;
+    border-top-right-radius: 1rem;
+    z-index: 1;
+  }
+  
+  a {
+    text-decoration: none;
+    position: relative;
+    background-color: var(--foreground);
+    outline: 1px solid var(--foreground);
+    outline-offset: -1px;
+    border-radius: 1rem;
+    overflow: hidden;
+    filter: saturate(1);
+    transition: 500ms;
+  }
+  
+  a > img {
     aspect-ratio: 1;
-    height: 100%;
-}
-
-.one {
-    background-color: red;
-}
-
-.two {
-    background-color: blue;
-}
-
-.three {
-    background-color: green;
-}
-
-.four {
-    background-color: purple;
-}
-
-.five {
-    background-color: orange;
-}
-
-.six {
-    background-color: yellow;
-}
+    border: none;
+    width: 100%;
+    display: block;
+  }
+  
+  a:hover {
+    filter: saturate(1);
+  }
 
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Marcellus|DM+Sans');
 
