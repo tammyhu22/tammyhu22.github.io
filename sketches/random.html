@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <title>random</title>
+        <style>
+        html,
+        body {
+            padding:0;
+            margin:0;
+            overflow:hidden;
+        }
+        </style>
+        <script>
+            let r, g, b;
+
+            function setup () {
+            createCanvas(windowWidth, windowHeight);
+            noLoop();
+            }
+
+            // On window resize, update the canvas size
+            function windowResized () {
+            resizeCanvas(windowWidth, windowHeight);
+            }
+
+            function draw() {
+            r = random(64, 255);
+            g = random(191,226);
+            b = random(0,255);
+            background(20);
+            stroke(230);
+            strokeWeight(1.5);
+            fill (230);
+            // second rec
+            rect(windowWidth / 2 + 80, windowHeight / 2 + 120, 30, 30);
+            fill (r,g,b);
+            stroke(r,g,b);
+            // first rec
+            rect(windowWidth / 2 + 40, windowHeight / 2 + 120, 30, 30);
+            stroke(230);
+                noFill();
+
+            // third rec
+                rect(windowWidth / 2 + 120, windowHeight / 2 + 120, 30, 30);
+            
+            // big rec
+            rect(windowWidth / 2 - 150, windowHeight / 2 - 190, 300, 300);
+
+            // square
+            rect(windowWidth / 2 - 80, windowHeight / 2 - 50, 100, 100);
+            
+            // door
+                rect(windowWidth / 2 - 50, windowHeight / 2 - 20, 40, 70, 40, 40, 0, 0);
+            
+                line(windowWidth / 2 - 10, windowHeight / 2 + 25, windowWidth / 2 - 50, windowHeight / 2 + 50);
+            
+            fill(230);
+            stroke(230);
+                triangle(windowWidth / 2 -11, windowHeight / 2 + 25, windowWidth / 2 - 50, windowHeight / 2 + 50, windowWidth / 2 - 11, windowHeight / 2 + 50);
+            stroke(230);
+            noFill();
+            // side wall
+            beginShape();
+                vertex(windowWidth / 2 + 20, windowHeight / 2 - 50);
+                vertex(windowWidth / 2 + 20, windowHeight / 2 + 50);
+                vertex(windowWidth / 2 + 90, windowHeight / 2);
+                vertex(windowWidth / 2 + 90, windowHeight / 2 - 90);
+            endShape(CLOSE);
+            
+            // window
+            fill(r,g,b);
+                beginShape();
+                vertex(windowWidth / 2 + 40, windowHeight / 2 - 40);
+                vertex(windowWidth / 2 + 40, windowHeight / 2 + 10);
+                vertex(windowWidth / 2 + 70, windowHeight / 2 - 10);
+                vertex(windowWidth / 2 + 70, windowHeight / 2 - 60);
+            endShape(CLOSE);
+            
+            // window lines
+            stroke(20);
+            line(windowWidth / 2 + 65, windowHeight / 2 - 56, 
+                windowWidth / 2 + 65, windowHeight / 2 - 15);
+            
+                line(windowWidth / 2 + 41, windowHeight / 2 + 2, 
+                windowWidth / 2 + 65, windowHeight / 2 - 14);
+            
+                line(windowWidth / 2 + 70, windowHeight / 2 - 11, 
+                windowWidth / 2 + 65, windowHeight / 2 - 14);
+            
+            stroke(r,g,b)
+            fill(r,g,b);
+            // shadow? 
+            let ang = random(-10,30);
+            let ang2 = random(0,10)
+            beginShape();
+                vertex(windowWidth / 2 + 20, windowHeight / 2 + 50);
+                vertex(windowWidth / 2 + 90, windowHeight / 2);
+                vertex(windowWidth / 2 + 150, windowHeight / 2 + ang);
+                vertex(windowWidth / 2 + 150, windowHeight / 2 + ang + 50 + ang2);
+            endShape(CLOSE);
+            
+            noFill();
+            
+            stroke(230);
+            triangle(windowWidth / 2 + 20, windowHeight / 2 - 50, windowWidth / 2 - 80, windowHeight / 2 - 50, windowWidth / 2 - 30, windowHeight / 2 - 120);
+            
+                beginShape();
+                // triangle top
+                vertex(windowWidth / 2 - 30, windowHeight / 2 - 120);
+                // right rectangle left
+                vertex(windowWidth / 2 + 20, windowHeight / 2 - 50);
+                // right rectangle right
+                vertex(windowWidth / 2 + 90, windowHeight / 2 - 90);
+                vertex(windowWidth / 2 + 50, windowHeight / 2 - 150)
+            endShape(CLOSE);
+            
+            push();
+            translate(width * 0.5 - 180, height * 0.5 - 100);
+            fill(r,g,b);
+            stroke(20);
+            strokeWeight(3);
+            //rotate(frameCount / -100.00)
+            star(0, 0, 60, 35, 11);
+            pop();  
+            
+            
+            push();
+            translate(width / 2 + 185, height * 0.47 + 30);
+            rotate(30);
+            star(0, 0, 15, 8, 5);
+            pop(); 
+            
+            
+            push();
+            translate(width / 2 + 185, height * 0.47 - 60);
+            rotate(30);
+            star(0, 0, 17, 1, 7);
+            pop(); 
+
+            
+            push();
+            translate(width / 2 + 185, height * 0.47 - 15);
+            fill(r,g,b);
+            stroke(r,g,b);
+            rotate(20);
+            star(0, 0, 8, 3, 4);
+            pop(); 
+            
+            function star(x, y, radius1, radius2, npoints) {
+            let angle = TWO_PI / npoints;
+            let halfAngle = angle / 2.0;
+            beginShape();
+            for (let a = 0; a < TWO_PI; a += angle) {
+                let sx = x + cos(a) * radius2;
+                let sy = y + sin(a) * radius2;
+                vertex(sx, sy);
+                sx = x + cos(a + halfAngle) * radius1;
+                sy = y + sin(a + halfAngle) * radius1;
+                vertex(sx, sy);
+            }
+            endShape(CLOSE);
+            }
+            strokeWeight(1.5);
+            stroke(230);
+            let count = 16;
+            num = random(3,18);
+            for(let i = 0; i < count; i++) {
+                beginShape(TRIANGLES);
+                vertex(width / 2 - 150 + 20 * i, height / 2 - 235);
+                vertex(width / 2 - 150 + 20 * i, height / 2 - 205);
+                vertex(width / 2 - 110 + num * i, height / 2 - 205);
+            endShape();
+            }
+                
+
+            translate(width / 2 - 178 , height / 2 - 100);
+            rotate(-0.3);
+            smiley(0, 0, 50);
+            
+            
+            function smiley(x, y, diameter) {
+            // Face
+            noFill();                  //fills the face with yellow color
+            stroke(230);                          //outline in black color 
+            strokeWeight(2.5);                    //outline weight set to 2
+
+            // Smile
+            var startAngle = 0.1 * PI;          //start angle of the arc
+            var endAngle = 0.9 * PI;            //end angle
+            var smilediameter = 0.6 * diameter;  
+            arc(x, y, smilediameter, smilediameter, startAngle, endAngle);
+
+            // Eyes
+            var offset = 0.2 * diameter;
+            var eyediameter = 0.1 * diameter;
+            fill(230);
+            
+            ellipse(x - offset, y - offset, eyediameter, eyediameter);
+            ellipse(x + offset, y - offset, eyediameter, eyediameter);
+            }
+
+
+            };
+
+            // Creates palette from https://coolors.co/ URL
+            function createPalette(_url) {
+                let slash_index = _url.lastIndexOf('/');
+                let pallate_str = _url.slice(slash_index + 1);
+                let arr = pallate_str.split('-');
+                for (let i = 0; i < arr.length; i++) {
+                    arr[i] = '#' + arr[i];
+                }
+                return arr;
+            };
+        </script>
+    </head>
+</html>
