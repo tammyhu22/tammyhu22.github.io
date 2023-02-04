@@ -17,8 +17,14 @@
             let moveTri =  0.3;
             let movingRight = true;
             let r,g,b;
+            let stamps = [[0, 0], [0, 0]]
+
+
             function setup () {
             createCanvas(windowWidth, windowHeight);
+                r = random(64, 255);
+                g = random(191,226);
+                b = random(0,255);
             }
 
             // On window resize, update the canvas size
@@ -28,6 +34,14 @@
 
             function draw() {
             background(20);
+                // For every stamp in our stamp coordinate array
+            for (const stamp of stamps) {
+                // draw the stamp (in this case a circle) at the stamp coordinates
+                drawFlower(stamp[0], stamp[1])
+            }
+            fill(23);
+            stroke(23);
+            rect(0, 0, 30, 30);
             stroke(230);
             strokeWeight(1.5);
             fill (230);
@@ -133,28 +147,6 @@
             star(0, 0, 10, 5, 4);
             pop(); 
             
-                push();
-            translate(width / 2 + 185, height * 0.47 + 30);
-            rotate(30);
-            star(0, 0, 15, 8, 5);
-            pop(); 
-            
-            
-            push();
-            translate(width / 2 + 185, height * 0.47 - 60);
-            rotate(30);
-            star(0, 0, 17, 1, 7);
-            pop(); 
-
-            
-            push();
-            translate(width / 2 + 185, height * 0.47 - 15);
-            fill(r,g,b);
-            stroke(r,g,b);
-            rotate(20);
-            star(0, 0, 8, 3, 4);
-            pop(); 
-            
             
             function star(x, y, radius1, radius2, npoints) {
             let angle = TWO_PI / npoints;
@@ -194,7 +186,21 @@
             } else {
             t -= moveTri;  
             }
+
+                fill(r,g,b);
+                stroke(r,g,b);
+                ellipse(mouseX,mouseY,20,20)
+                ellipse(mouseX-15,mouseY+5,20,20)
+                ellipse(mouseX-25,mouseY-5,20,20)
+                ellipse(mouseX-17,mouseY-20,20,20)
+                ellipse(mouseX,mouseY-15,20,20)
+                fill (20);
+                ellipse(mouseX-12,mouseY-7,22,22) 
             
+            if (mouseIsPressed ===true) {
+                fill(r,g,b);
+                stroke(r,g,b);
+            }
             
             translate(width / 2 - 180 , height / 2 - 100);
             rotate(-0.3);
@@ -221,7 +227,6 @@
             ellipse(x - offset, y - offset, eyediameter, eyediameter);
             ellipse(x + offset, y - offset, eyediameter, eyediameter);
             }
-
             }
 
             function mousePressed() {
@@ -230,7 +235,24 @@
                 r = random(64, 255);
                 g = random(191,226);
                 b = random(0,255);
+                
             }
+            }
+
+            function mouseClicked() {
+            stamps.push([mouseX,mouseY]);
+            }
+
+            function drawFlower(x,y) {
+                fill(r,g,b);
+                stroke(r,g,b);
+                ellipse(x,y,20,20)
+                ellipse(x-15,y+5,20,20)
+                ellipse(x-25,y-5,20,20)
+                ellipse(x-17,y-20,20,20)
+                ellipse(x,y-15,20,20)
+                fill (20);
+                ellipse(x-12,y-7,22,22) 
             }
 
             function mouseReleased() {
