@@ -80,7 +80,7 @@
         style="color:rgb(22, 22, 22)"
         href="sketches/sound.html">
             <img
-                src="https://lh3.googleusercontent.com/zr2fhaD-MEs8HJQazuaQlJcxEjNgPCI9I_l7Qcve1EXft_ZQf-p6ZGE9ybL_uuI61wN9-TSdL9287OVLfVR7MD18yJAMxzb_3ck0tK3up3j0nIUPXGI-4uKxtknVGo0bOi1aoQEWdw=w2400"
+                src="https://lh3.googleusercontent.com/lJqFl4BX-nE3_6iDZlHSUuVAtvnZGMeVkP3OOJQjY2_7obB4_Wy7lsAz_BVVRydTerCBq4BiDeeUzcc8I3AVjT3jXE8c8_-lDMWRc_J1iQH63QTg5MWJXwokk-S5hEg4JesZSYbOqw=w2400"
             />
         </a>
 
@@ -94,20 +94,19 @@
       <div class = list>
         <li>Reading up on p5 documentation</li>
         <li>Looking at example p5 artwork for inspiration</li>
-        <ul><li>Sketched out intiial concepts on paper</li></ul>
+        <ul><li>Sketched out intial concepts on paper</li></ul>
         <li>A lot of trial and error in drawing out exactly what I wanted</li>
+        <li>Looking up related p5 examples to dissect the code</li>
         <li>(2 mid-process photos shown below)</li>
         <br />
           <div class = "picture-container2">
             <img
             class = "picture2"
-            src = "https://lh3.googleusercontent.com/9lSyq--CmP-gqBQRgT3jMcsB7wtJ7Udfnzp4bo7pCNxOSLm3L8Yk-farbQeldYLg15FE1IvpL8zH8TbRckpa91mtRue37SI-DxNe4JZIWqqDRoBYmVMKyD7iy3UD8V1k8L1u0mMRng=w2400"
-            width = "393px" height = "488px"
+            src = "https://lh3.googleusercontent.com/QStcn1IOrwQwFnunaNc3hvGT5eI7esnXKrQ_llhW-RnX_YU_6rdF8rNeYzdywB387LPvHHOJY0VuSHt4criyRLDdBnqjXRjE1YANF16r-OmClgU7M9uIy8BPUdY_armrMbht4PCGHw=w2400"
             />
             <img
             class = "picture2"
-            src = "https://lh3.googleusercontent.com/vXRJ9v6Ns7xHzeizvJK-ndSIOe0DcVA_XbfZeJj_RlRRsWeBUGg1GRfJORx8hexaZu6B8GTfgM4JArarrgFYopUobTsuh_h3UpbIfL1ZWXRiCIjEIjTV4hu2UvovzUS4EFoEDaOWLA=w2400"
-            width = "393px" height = "488px"
+            src = "https://lh3.googleusercontent.com/t55zoUxIBxNWmRFBkOV8uL-q7U03MCJrQOWpGayUOT8Q0rus2OBXASeALhakan-QpML4-BuADeZ7_aSh38UaFj6kdXraLGddYry6sGv5Ju4DqbH-0ijorDSEhdWfkRQkHdBHL5KtYA=w2400"
             />
           </div>
       </div>
@@ -115,30 +114,20 @@
       <br />
       <h2 class = "space">ISSUE DEEP DIVE</h2>
       <p class = "intro-paragraph">
-        I ran into several issues in this project. One of the most notable issues was displaying a line of text
-        that updated the number of current cookies on a site. It was a logic issue where at first, I was unable to get the
-        cookie number variable to be connected with my html's inline container.
+        Per usual, there were a lot of problems I ran into in the process. One of the bigger ones was
+        trying to have a loop animation with my triangles at the top of the house. I had trouble
+        having the animation bounce back and forth, or continue without straying off the page.
       </p>
       <br />
       <div class = "list">
         <p>I approached this problem with several steps, including:</p>
-        <li>Using console.log() to report back to see where in my code was coming up null</li>
-        <li>Started by referencing the deleteCookies function that was originally in the template code</li>
-        <ul><li>Created a getCookies() function to grab the cookies.length once the domain's cookies were gathered</li></ul>
-        <ul><li>This function connected to another function of setCookie() which communicated that number back to the html inline container</li></ul>
-        <li>My code was not working at this point, so I tried adding an EventListener that called a function when the DOM was fully loaded and parsed</li>
-        <ul><li>This function would be able to grab the url and pass it in the earlier function I had made getCookies()</li></ul>
-        <li>Lastly, I needed the extension to update this number whenever a user deleted the site's cookies</li>
-        <ul><li>After failing to write a new function to do this, I instead went into the deleteCookies() function to set my cookies back to 0 once cookies were deleted</li></ul>
-      </div>
-      <br />
-      <br />
-      <p>Final extension below (may take a while to load):</p>
-      <div class = "gif-container">
-        <img
-        class = "gif"
-        src = "https://lh3.googleusercontent.com/nuPZ3COCHSOVuVkHC1HQtRlwo99jBrouJwQY-p_u4DM0XMN9CaX22PWeLKpKwvaFaRQsC6qVqvUbBt10GEFUkz1OHeoDDWYybWdeaL5sTUSGKWhkdRrdhQxZvkjE4Yi0aZu5QVZgtA=w2400"
-        />
+        <li>Double checking my coordinates to where I wanted the animation to end</li>
+        <li>Looked at bouncing ball code examples to understand how to increment time and dimension</li>
+        <ul><li>This is where I added a global t variable and an if statement to have t increase when moving right and decrease when moving left</li></ul>
+        <li>My code was working a bit more, but the loop was starting over instead of bouncing back</li>
+        <ul><li>I added a global movingRight variable and set it to true</li></ul>
+        <ul><li>I changed the variable to "false" whenever the loop ended at a specific coordinate</li></ul>
+        <li>In the end, I was able to have a looping animation that bounced back and forth</li>
       </div>
       <br />
       <br />

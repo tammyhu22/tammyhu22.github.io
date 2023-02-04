@@ -96,8 +96,8 @@ body {
 }
 
 .picture2 {
-  width: 100 px;
-  height: auto;
+  width: 550px;
+  height: 300px;
   border: 1px solid rgb(95, 95, 95);
   border-radius: 5px;
   cursor: pointer;
