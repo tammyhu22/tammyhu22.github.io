@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+        <title>voice</title>
+        <style>
+        html,
+        body {
+            padding:0;
+            margin:0;
+            overflow:hidden;
+        }
+        </style>
+        <script>
+            var mic;
+            let r,g,b;
+
+            function setup() {
+            createCanvas(windowWidth, windowHeight);
+            mic = new p5.AudioIn();
+            mic.start();
+            }
+
+            function draw() {
+            background(23);
+            var vol = mic.getLevel();
+            if (vol > 0.01) {
+                r = random(64, 255);
+                g = random(191,226);
+                b = random(0,255);
+            }
+            fill(r,g,b);
+            ellipse(mouseX, mouseY, vol * 7000, vol * 7000);
+            star(mouseX, mouseY, vol*7000, 50, 11);
+            rotate(frameCount/-300);
+            star(width/ 2, height / 2, vol*7000, vol * 7000, 11);
+            rotate(frameCount/100);
+            star(width/ 2, height / 2, vol*7000, 50, 6);
+            
+            rotate(frameCount/- 200);
+            star(width/ 2 + 100, height / 2 - 50, vol*5000, vol*5000, 3);
+            
+            rotate(frameCount/50);
+            star(width/ 2 + 300, height / 2 + 20, vol*5000, 70, 9);
+            
+            rotate(frameCount/-50);
+            star(width/ 2 - 300, height / 2 + 20, vol*5000, 50, 13);
+            
+            rotate(frameCount/-40);
+            star(width/ 2 - 300, height / 2 + 400, vol*8000, 50, 4);
+            
+            console.log(vol);
+            }
+
+            function star(x, y, radius1, radius2, npoints) {
+            let angle = TWO_PI / npoints;
+            let halfAngle = angle / 2.0;
+            beginShape();    
+            for (let a = 0; a < TWO_PI; a += angle) {
+                let sx = x + cos(a) * radius2;
+                let sy = y + sin(a) * radius2;
+                vertex(sx, sy);      
+                sx = x + cos(a + halfAngle) * radius1;
+                sy = y + sin(a + halfAngle) * radius1;
+                vertex(sx, sy);
+            }
+            endShape(CLOSE);
+            }
+
+        </script>
+    </head>
+</html>
