@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>p5 Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./mp3.css" />
+    <link rel="stylesheet" href="../index.css" />
+  </head>
+  <body>
+    <nav class="navbar" style = "background-color: rgb(22, 22, 22);">
+      <div class="max-width">
+          <div class="logo"><a href='../index.html'>TAMMY<span>ꕤHU</span></a></div>
+          <ul class="menu">
+              <li><a href="../index.html">Work</a></li>
+              <li><a href="../gallery.html">Gallery</a></li>
+              <li><a href="../about.html">About</a></li>
+          </ul>
+      </div>
+    </nav>
+    <br></br>
+    <div class="fill">
+      <img class = "image"
+        src="https://lh3.googleusercontent.com/fLrvdEQVWp7_c0gE-W-FIm0lWAbZz5emGPlc-NxY_pVHDIwCzJbUDrHPeAW_OLHHSQyBhhJwYBrbYEGqDnu1OlDCM5wa-F02c--K-KHOqsY8LMm7cwYDTcbZUdnAJbZExG-7BtT24A=w2400"
+      />
+    </div>
+    <div class="title">
+      <h1>The making of a game with p5.play ツ</h1>
+    </div>
+    <div class = "bio-container">
+      <h2 class = "space">OVERVIEW</h2>
+      <p class="intro-paragraph">
+        In this project, I created a simple catching game with my illustrations. I used p5 and p5.play
+        libraries to create the game interactions and mechanisms. 
+        <br />
+        <br />
+      </p>
+      <br />
+      <br />
+      <h2 class = "space">DEVELOPMENT PROCESS</h2>
+      <p class = "intro-paragraph">
+        These are the main steps I took in approaching this project.
+      </p>
+      <br />
+      <div class = list>
+        <li>Set up development environment with npm</li>
+        <li>Looked at tutorial code of p5.play library functions</li>
+        <li>Laid out 3 stages/screens for the game: start, play, and game over/li>
+        <li>Imported sound, images, and font</li>
+        <ul><li>Editing sources to fit the dimensions of the game</li></ul>
+        <li>Editing the catching mechanism to fit my illustration</li>
+        <li>(2 mid-process photos shown below)</li>
+        <br />
+          <div class = "picture-container2">
+            <img
+            class = "picture2"
+            type = image/png
+            src = "/images/mp3-mid.png"
+            width = "600px" height = "320px"
+            />
+            <img
+            class = "picture2"
+            src = "/images/mp3-mid2.png"
+            width = "600px" height = "320px"
+            />
+          </div>
+      </div>
+      <br />
+      <br />
+      <h2 class = "space">ISSUE DEEP DIVE</h2>
+      <p class = "intro-paragraph">
+        I ran into several issues in this project. One of the most notable issues was having different
+        music playing at each stage of the game. 
+      </p>
+      <br />
+      <div class = "list">
+        <p>I approached this problem with several steps, including:</p>
+        <li>The audio was stacking on top of each other, so I created a boolean for each song to check if it was playing or not</li>
+        <li>The music would only play in the correct stage if their corresponding boolean = false</li>
+        <li>After looping through the game once, all music would stop playing</li>
+        <ul><li>With the mousePressed function, I reset the booleans of the previous song back to false so when it loops back, the music will play again</li></ul>
+      </div>
+      <br />
+      <br />
+      <p>Final game <a class="link" href="https://tammyhu22.github.io/game/">here</a> or shown below (best played on Chrome):</p>
+      <div class = "gif-container">
+        <img
+        class = "gif"
+        src = "../images/spam-game.gif"
+        />
+      </div>
+      <br />
+      <br />
+      <h2 class = "space">IDEAS AND FUTURE WORK</h2>
+      <p class = "intro-paragraph">
+        Here are some ideas for improving on this extension:
+      </p>
+      <br />
+      <div class = "list">
+        <li>Have "lives" for the players, signified by musubi on the screen</li>
+        <li>Have a mute option for the game</li>
+        <li>Have different food themes/options for the player</li>
+      </div>
+      <br />
+      <br />
+      <h2 class = "space">KUDOS</h2>
+      <p class = "intro-paragraph">
+        I got lots of support and resources during this project, including:
+      </p>
+      <br />
+      <div class = "list">
+        <li><a class = "link" href = "https://github.com/GoogleChrome/chrome-extensions-samples/tree/main/api/cookies/cookie-clearer">Google's cookie extension template</a></li>
+        <li><a class = "link" href = "https://developer.chrome.com/docs/extensions/reference/cookies/#examples">The chrome.cookies API documentation</a></li>
+        <li>Stack overflow posts about working with javascript</li>
+        <li><a class = "link" href = "https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/getting-started/part2-content-scripts?source=recommendations&tabs=v3">Microsoft tutorial on building an extension</a></li>
+        <li><a class = "link" href = "https://levelup.gitconnected.com/chrome-extension-tutorial-replace-images-in-any-website-with-pikachu-de2a6e3548bb">Medium article on building an image-replacing extension</a></li>
+        <li><a class = "link" href = "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox">Mozilla's developer resources: checkbox html</a></li>
+        <li>Big shoutout to my instructor Hannah for helping me work through my coding roadblocks</li>
+      </div>
+      <br />
+      <br />
+    </div>
+  </body>
+</html>
