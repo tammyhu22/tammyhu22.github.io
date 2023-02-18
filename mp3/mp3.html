@@ -44,7 +44,7 @@
       <div class = list>
         <li>Set up development environment with npm</li>
         <li>Looked at tutorial code of p5.play library functions</li>
-        <li>Laid out 3 stages/screens for the game: start, play, and game over/li>
+        <li>Laid out 3 stages/screens for the game: start, play, and game over</li>
         <li>Imported sound, images, and font</li>
         <ul><li>Editing sources to fit the dimensions of the game</li></ul>
         <li>Editing the catching mechanism to fit my illustration</li>
@@ -55,12 +55,12 @@
             class = "picture2"
             type = image/png
             src = "/images/mp3-mid.png"
-            width = "600px" height = "320px"
+            width = "600px" height = "220px"
             />
             <img
             class = "picture2"
             src = "/images/mp3-mid2.png"
-            width = "600px" height = "320px"
+            width = "600px" height = "220px"
             />
           </div>
       </div>
@@ -69,7 +69,8 @@
       <h2 class = "space">ISSUE DEEP DIVE</h2>
       <p class = "intro-paragraph">
         I ran into several issues in this project. One of the most notable issues was having different
-        music playing at each stage of the game. 
+        music playing at each stage of the game. This was a logic problem, as each song belonged to a different
+        stage, and had to play at a different time depending on the user's actions.
       </p>
       <br />
       <div class = "list">
