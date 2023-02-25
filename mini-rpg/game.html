@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>RPG Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./game.css" />
+    <link rel="stylesheet" href="../index.css" />
+  </head>
+  <body>
+    <nav class="navbar" style = "background-color: rgb(22, 22, 22);">
+      <div class="max-width">
+          <div class="logo"><a href='../index.html'>TAMMY<span>ꕤHU</span></a></div>
+          <ul class="menu">
+              <li><a href="../index.html">Work</a></li>
+              <li><a href="../gallery.html">Gallery</a></li>
+              <li><a href="../about.html">About</a></li>
+          </ul>
+      </div>
+    </nav>
+    <br></br>
+    <div class="fill">
+      <img class = "image"
+        src="/images/wall.png"
+      />
+    </div>
+    <div class="title">
+      <h1>The making of a game in html/css/javascript ツ</h1>
+    </div>
+    <div class = "bio-container">
+      <h2 class = "space">PLAN OVERVIEW</h2>
+      <p class="intro-paragraph">
+        My plan is to create a simple rpg environment based in javascript. The game would have a 
+        pixel style character that can be controlled by keyboard input and some interactive NPCs 
+        and short storyline if time allows. I have drawn sketches of the envisioned interface, which 
+        is a coffee shop where the user plays as a barista. For the scope of this project, the game will 
+        just take place in one environment. 
+        <br />
+        <br/>
+        <br/>
+        <div class = "picture-container2">
+            <img
+            class = "picture2"
+            type = image/png
+            src = "/images/sketch.png"
+            width = "600px" height = "800px"
+            />
+          </div>
+        <br />
+        <h3 class = "space">PROTOTYPE VERSION</h3>
+        <p class = "list">
+            Will have a dev toolchain file set up with environment/character assets uploaded. 
+            Character should be controlled by keyboard input and blocks/walls added into the game. 
+            NPC and talking interaction as well.
+        </p>
+        <br/>
+        <h3 class = "space">FINAL VERSION</h3>
+        <p class = "list">
+            Building upon the prototype version, have some game interaction and/or storyline. 
+            Then deploy it to a GitHub website.
+        </p>
+      </p>
+      <br />
+      <br />
+      <h2 class = "space">DEVELOPMENT PROCESS</h2>
+      <p class = "intro-paragraph">
+        These are the main steps I will be taking in approaching this project.
+      </p>
+      <br />
+      <p class = list>
+        1. Create personal pixel assets - probably use existing, free tilesets <br/>
+        2. Create repository and set up file, following tutorial. Upload assets. <br/>
+        3. Place in environment<br/>
+        4. Add game objects<br/>
+        5. Create grid-based movement and character animations<br/>
+        6. Add camera movement<br/>
+        7. Handle walls/collisions (Milestone 1 complete)<br/>
+        8. Behaviors and cutscenes<br/>
+        9. Typewriters/scenes<br/>
+        10. Game behavior (serving customers)<br/>
+        11. Add sound<br/>
+        12. Title screen<br/>
+        13. Deploy game (Milestone 2 complete)<br/>
+        <br />
+      </p>
+      <br />
+      <h3 class = "space">UNKNOWNS</h3>
+      <div class = "list">
+        <li>How to work with pixel assets</li>
+        <li>Building top-down camera games from javascript</li>
+        <li>Having storyline-based interactions</li>
+      </div>
+      <br />
+      <h3 class = "space">STRETCH GOALS</h3>
+      <div class = "list">
+        <li>Have a full storyline</li>
+        <li>Have multiple map areas</li>
+        <li>Save progress functionality</li>
+        <li>Adding background music</li>
+      </div>
+      <br/>
+      <br/>
+      <!-- <h2 class = "space">ISSUE DEEP DIVE</h2>
+      <p class = "intro-paragraph">
+        I ran into several issues in this project. One of the most notable issues was having different
+        music playing at each stage of the game. This was a logic problem, as each song belonged to a different
+        stage, and had to play at a different time depending on the user's actions.
+      </p>
+      <br />
+      <div class = "list">
+        <p>I approached this problem with several steps, including:</p>
+        <li>The audio was stacking on top of each other, so I created a boolean for each song to check if it was playing or not</li>
+        <li>The music would only play in the correct stage if their corresponding boolean = false</li>
+        <li>After looping through the game once, all music would stop playing</li>
+        <ul><li>With the mousePressed function, I reset the booleans of the previous song back to false so when it loops back, the music will play again</li></ul>
+      </div>
+      <br />
+      <br />
+      <p>Final game <a class="link" href="https://tammyhu22.github.io/game/">here</a> or shown below (best played on Chrome):</p>
+      <div class = "gif-container">
+        <img
+        class = "gif"
+        src = "../images/spam-game.gif"
+        />
+      </div>
+      <br />
+      <br />
+      <h2 class = "space">IDEAS AND FUTURE WORK</h2>
+      <p class = "intro-paragraph">
+        Here are some ideas for improving on this extension:
+      </p>
+      <br />
+      <div class = "list">
+        <li>Have "lives" for the players, signified by musubi on the screen</li>
+        <li>Have a mute option for the game</li>
+        <li>Have different food themes/options for the player</li>
+        <li>Add multiple musubi or other foods, add some "bad" items to avoid catching</li>
+      </div>
+      <br />
+      <br />
+      <h2 class = "space">KUDOS</h2>
+      <p class = "intro-paragraph">
+        I got lots of support and resources during this project, including:
+      </p>
+      <br />
+      <div class = "list">
+        <li><a class = "link" href = "https://github.com/GoogleChrome/chrome-extensions-samples/tree/main/api/cookies/cookie-clearer">Google's cookie extension template</a></li>
+        <li><a class = "link" href = "https://developer.chrome.com/docs/extensions/reference/cookies/#examples">The chrome.cookies API documentation</a></li>
+        <li>Stack overflow posts about working with javascript</li>
+        <li><a class = "link" href = "https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/getting-started/part2-content-scripts?source=recommendations&tabs=v3">Microsoft tutorial on building an extension</a></li>
+        <li><a class = "link" href = "https://levelup.gitconnected.com/chrome-extension-tutorial-replace-images-in-any-website-with-pikachu-de2a6e3548bb">Medium article on building an image-replacing extension</a></li>
+        <li><a class = "link" href = "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox">Mozilla's developer resources: checkbox html</a></li>
+        <li>Big shoutout to my instructor Hannah for helping me work through my coding roadblocks</li>
+      </div>
+      <br />
+      <br />
+    </div> -->
+  </body>
+</html>
