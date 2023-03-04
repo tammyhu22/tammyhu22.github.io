@@ -26,6 +26,140 @@
     <div class="title">
       <h1>The making of a game in HTML / CSS / JavaScript ツ</h1>
     </div>
+    <div class="title">
+      <h1>The Prototype</h1>
+    </div>
+    <div class = "bio-container">
+      <h2 class = "space">OVERVIEW AND USAGE</h2>
+      <p class="intro-paragraph">
+        For my prototype, I’ve created a short version of my envisioned game. 
+        There is no actual game story yet, but I have a clearer direction for it now that 
+        I’ve laid out my file structure. This version consists of a beginning scene with 
+        the (snarky) manager, where the user plays as a barista on their first day of work. 
+        You can interact with the NPCs as well.
+        <br/>
+        <br/>
+        <div class = "picture-container2">
+            <img
+            class = "picture2"
+            type = gif
+            src = "/images/cafe-prototype.gif"
+            width = "800px" height = "500px"
+            />
+          </div>
+      <br />
+      <h2 class = "space">DEVELOPMENT PROCESS</h2>
+      <p class = "intro-paragraph">
+        These are the main steps I will be taking in approaching this project.
+      </p>
+      <br />
+      <p class = list>
+        1. Creating my game assets with aseprite (purchased this program) <br/>
+        2. Used some open source pixel assets from itch.io <br/>
+        3. Using html canvas to draw my game area<br/>
+        4. Add game objects<br/>
+        5. Laying out a javascript world for my game: including separate javascript for each “object” in the game, like animation, people, text messages, etc. with their own properties<br/>
+        6. OverworldMap.js builds out the map in layers, creating the effect that the player can walk behind objects <br/>
+        7. Different “maps” are organized with several arrays, each with layers, gameObjects of characters, their position, image file, behavior loop, and talking sequences<br/>
+        8. Adding player controls with EventListener<br/>
+        9. Including a camera effect so the map centers around the character<br/>
+        10. Incorporating “cutscenes”, scenes like talking where the player is unable to move and then NPCs behave a certain way<br/>
+        11. Styling my text messages and animating the text writer effect<br/>
+        12. Adding another EventListener for clicking enter to skip through dialogue<br/>
+        13. Adding a title and instructions with customized font family<br/>
+        14. Deploying to GitHub pages<br/>
+        <br />
+      </p>
+      <div class = "picture-container2">
+        <img
+        class = "picture2"
+        type = image/png
+        src = "/images/progress2.png"
+        width = "600px" height = "400px"
+        />
+      </div>
+      <div class = "picture-container2">
+        <img
+        class = "picture2"
+        type = image/png
+        src = "/images/progress1.png"
+        width = "700px" height = "400px"
+        />
+      </div>
+      <br />
+      <h2 class = "space">ISSUE DEEP DIVE</h2>
+      <p class = "intro-paragraph">
+        In testing out cutscenes where npcs and the player can move/not move
+         based on a scripted scene, my code was running into a roadblock 
+         and not carrying out the rest of the code I wanted. 
+      </p>
+      <br />
+      <div class = "list">
+        <p>I approached this problem with several steps, including:</p>
+        <li>I wrote a few console.logs in my for loops and out, to see if the for loop was working</li>
+        <li>When I saw that my index was pausing, I knew that the (assuming logic) issue was within my for loop so I then checked at which point it was stopping, which was at my player’s second movement going downward</li>
+        <li>I realized that the player was running into a wall and the code was unable to continue because it didn’t know what to do if a player’s path has a block in it, so I simply adjusted the movement path</li>
+      </div>
+      <br />
+      <br />
+      <h2 class = "space">IDEAS AND FUTURE WORK</h2>
+      <p class = "intro-paragraph">
+        Here are some ideas for improving on this extension:
+      </p>
+      <br />
+      <div class = "list">
+        <li>Implementing a short “game”: where you have to get the correct order to the right customer since the receipts are scrambled</li>
+        <li>Adding music</li>
+        <li>Adding a title screen</li>
+        <li>Adding dialogue options for the player</li>
+      </div>
+      <br />
+      <br />
+      <h2 class = "space">KUDOS</h2>
+      <p class = "intro-paragraph">
+        I got lots of support and resources during this project, including:
+      </p>
+      <br />
+      <div class = "list">
+        <li><a class = "link" href = "https://www.youtube.com/watch?v=fyi4vfbKEeo&t=2s">Drew Conley’s amazing youtube tutorial on coding an RPG completely with javascript</a></li>
+        <li>Joined Drew’s Discord Server and got a lot of support there on specific questions on the tutorial</li>
+        <li>Stack overflow posts about working with javascript</li>
+      </div>
+      <br />
+      <h3 class = "space">PROJECT SCOPE</h3>
+      <div class = "list">
+        <p>My scope has narrowed in terms of gameplay - at first I wasn’t sure what the 
+          game was because I didn’t know how complicated it was to code this out. 
+          Turns out, coding a game is quite time-consuming, so I’m trying to opt 
+          for a simple matching game. I wanted to have multiple maps potentially, 
+          but realized it would take a lot more time to implement that.</p>
+      </div>
+      <br />
+      <h3 class = "space">TIME MANAGEMENT</h3>
+      <div class = "list">
+        <li>I spent a lot more time on the prototype than I imagined. In order 
+          to try to complete my vision for the final submission, I sped up my 
+          prototype timeline to allow for enough time to troubleshoot for my next plan 
+          (since this starts to deviate a lot more from the tutorials, I’ll 
+          have to rely on it less)</li>
+        <li>I ran into issues with deploying through vite, and because my file 
+          structure was not optimized/bundled for it, I have deployed it directly 
+          to GitHub pages. This isn’t ideal, but was done for the sake of completing 
+          the project on time.</li>
+      </div>
+      <br />
+      <h3 class = "space">IMPLEMENTATION PLAN</h3>
+      <div class = "list">
+        <p>I originally wanted a story-based narrative/gameplay on top of the main 
+          functionality of serving customers. I’ve decided that it would focus 
+          less on a storyline and more on interacting with different NPCs to make 
+          a shorter game, in order to have better time management for the next week.</p>
+      </div>
+    </div>
+    <br/>
+    <div class="title">
+      <h1>The Proposal</h1>
+    </div>
     <div class = "bio-container">
       <h2 class = "space">PLAN OVERVIEW</h2>
       <p class="intro-paragraph">
