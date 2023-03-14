@@ -26,6 +26,109 @@
     <div class="title">
       <h1>The making of a game in HTML / CSS / JavaScript ツ</h1>
     </div>
+    <br/>
+    <div class="title">
+      <h1>The Final Game (play <a class = "link" href = "https://tammyhu22.github.io/tiny-cafe-game/">here</a>)</h1>
+    </div>
+    <div class = "bio-container">
+      <h2 class = "space">OVERVIEW AND USAGE</h2>
+      <p class="intro-paragraph">
+        For my final submission, I have created a functional pixel rpg of 
+        “Tiny Cafe”, a game where the player gets to be a barista on their 
+        first day of work. Their manager tasks them with serving customers - 
+        but the receipts are scrambled. The player must talk to the locals 
+        in the cafe to figure out what they ordered and serve the correct 
+        item to each person to beat the game. The game includes little 
+        interactions like different dialogue that come up at different 
+        stages of the game and walking out of the cafe triggers your boss 
+        to yell at you.</p>
+        <br/>
+        <br/>
+        <div class = "picture-container2">
+            <img
+            class = "picture2"
+            type = gif
+            src = "/images/final-game.gif"
+            width = "800px" height = "500px"
+            />
+          </div>
+      <br />
+      <h2 class = "space">DEVELOPMENT PROCESS</h2>
+      <p class = "intro-paragraph">
+        These are the main steps I will be taking in completing this project.
+      </p>
+      <br />
+      <p class = list>
+        1. Creating a PlayerState.js to track storyFlags (these would later be used to track the progress of the player) <br/>
+        2. Creating a FoodStone.js. This is where different foods can be created as gameObjects, referenced by the OverworldMap.js. The FoodStone.js communicates through OverworldEvent.js in order to add storyFlags into PlayerState.js, for example when a donut gets picked up <br/>
+        3. Deciding different storyFlags (i.e. “INVENTORY_FULL” or “DONUT_DONE”)<br/>
+        4. Creating 2 new event types: 1 where the player serves correctly and 1 where the player serves incorrectly, and inputting the text dialogue for each scenario, in each NPC<br/>
+        5. Re-organizing my gameObjects to be configObjects to bring back NPC default behavior. This allows the NPCs to continue their behaviorLoop (walking around) after a cutscene ends<br/>
+        <br />
+      </p>
+      <div class = "picture-container2">
+        <img
+        class = "picture2"
+        type = image/png
+        src = "/images/progress3.png"
+        width = "700px" height = "300px"
+        />
+      </div>
+      <div class = "picture-container2">
+        <img
+        class = "picture2"
+        type = image/png
+        src = "/images/progress4.png"
+        width = "700px" height = "400px"
+        />
+      </div>
+      <br />
+      <h2 class = "space">ISSUE DEEP DIVE</h2>
+      <p class = "intro-paragraph">
+        I needed a way for if the user happens to guess the “last NPC’s” order, 
+        then the manager should let the user know that they still have more 
+        people to serve (the NPC is designed to refuse to talk to the player 
+        until all 3 other NPCs are served, but if you serve that NPC correctly, 
+        the player progresses to the end without completing other orders). 
+      </p>
+      <br />
+      <div class = "list">
+        <p>I approached this problem with several steps, including:</p>
+        <li>I needed a separate storyFlag that was not just that last NPC’s storyFlag because there were ways to bypass it</li>
+        <li>First I tried putting a if statement check, that if all foods were served correctly, then there would be a new flag created like “ALL_DONE”</li>
+        <li>I tried putting this flag in playerState.js but the flag was not being placed</li>
+        <li>Instead, I moved the check into OverworldEvent.js, so that every time a food object is interacted with or a serving event occurs, it also does a check on whether or not all the food had been served. </li>
+        <li>Testing out the game, it worked so that even when the player serves the coffee/last NPC but didn’t finish the rest, the manager will not give them the ending dialogue that tells them they have completed the game</li>
+      </div>
+      <br />
+      <br />
+      <h2 class = "space">IDEAS AND FUTURE WORK</h2>
+      <p class = "intro-paragraph">
+        Here are some ideas for improving on this extension:
+      </p>
+      <br />
+      <div class = "list">
+        <li>Having text bubbles that pop up to call user attention to certain objects</li>
+        <li>Having text speech effects</li>
+        <li>Message profile pics of the NPCs and player in the message box</li>
+        <li>More maps and ability to save progress</li>
+        <li>Pixel based movement instead of grid based</li>
+        <li>More levels, maybe with NPCs that spawn and leave with a given time limit (like Diner Dash)</li>
+      </div>
+      <br />
+      <br />
+      <h2 class = "space">KUDOS</h2>
+      <p class = "intro-paragraph">
+        I got lots of support and resources during this project, including:
+      </p>
+      <br />
+      <div class = "list">
+        <li>Drew Conley (creator of Pizza Legends) helped me in his discord with thinking out how I should organize my events and game objects in approaching my initial idea of creating the gameplay</li>
+        <li>Hannah for giving me support throughout and helping me figure out how to hide the shadow for the food objects</li>
+      </div>
+      <br />
+    </div>
+    <br/>
     <div class="title">
       <h1>The Prototype</h1>
     </div>
@@ -233,60 +336,6 @@
       </div>
       <br/>
       <br/>
-      <!-- <h2 class = "space">ISSUE DEEP DIVE</h2>
-      <p class = "intro-paragraph">
-        I ran into several issues in this project. One of the most notable issues was having different
-        music playing at each stage of the game. This was a logic problem, as each song belonged to a different
-        stage, and had to play at a different time depending on the user's actions.
-      </p>
-      <br />
-      <div class = "list">
-        <p>I approached this problem with several steps, including:</p>
-        <li>The audio was stacking on top of each other, so I created a boolean for each song to check if it was playing or not</li>
-        <li>The music would only play in the correct stage if their corresponding boolean = false</li>
-        <li>After looping through the game once, all music would stop playing</li>
-        <ul><li>With the mousePressed function, I reset the booleans of the previous song back to false so when it loops back, the music will play again</li></ul>
-      </div>
-      <br />
-      <br />
-      <p>Final game <a class="link" href="https://tammyhu22.github.io/game/">here</a> or shown below (best played on Chrome):</p>
-      <div class = "gif-container">
-        <img
-        class = "gif"
-        src = "../images/spam-game.gif"
-        />
-      </div>
-      <br />
-      <br />
-      <h2 class = "space">IDEAS AND FUTURE WORK</h2>
-      <p class = "intro-paragraph">
-        Here are some ideas for improving on this extension:
-      </p>
-      <br />
-      <div class = "list">
-        <li>Have "lives" for the players, signified by musubi on the screen</li>
-        <li>Have a mute option for the game</li>
-        <li>Have different food themes/options for the player</li>
-        <li>Add multiple musubi or other foods, add some "bad" items to avoid catching</li>
-      </div>
-      <br />
-      <br />
-      <h2 class = "space">KUDOS</h2>
-      <p class = "intro-paragraph">
-        I got lots of support and resources during this project, including:
-      </p>
-      <br />
-      <div class = "list">
-        <li><a class = "link" href = "https://github.com/GoogleChrome/chrome-extensions-samples/tree/main/api/cookies/cookie-clearer">Google's cookie extension template</a></li>
-        <li><a class = "link" href = "https://developer.chrome.com/docs/extensions/reference/cookies/#examples">The chrome.cookies API documentation</a></li>
-        <li>Stack overflow posts about working with javascript</li>
-        <li><a class = "link" href = "https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/getting-started/part2-content-scripts?source=recommendations&tabs=v3">Microsoft tutorial on building an extension</a></li>
-        <li><a class = "link" href = "https://levelup.gitconnected.com/chrome-extension-tutorial-replace-images-in-any-website-with-pikachu-de2a6e3548bb">Medium article on building an image-replacing extension</a></li>
-        <li><a class = "link" href = "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox">Mozilla's developer resources: checkbox html</a></li>
-        <li>Big shoutout to my instructor Hannah for helping me work through my coding roadblocks</li>
-      </div>
-      <br />
-      <br />
-    </div> -->
   </body>
 </html>
+
